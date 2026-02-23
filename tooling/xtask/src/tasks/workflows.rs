@@ -17,11 +17,11 @@ mod extension_workflow_rollout;
 mod extensions;
 mod nix_build;
 mod publish_extension_cli;
-mod release_nightly;
-mod run_bundling;
-
 mod release;
+mod release_custom;
+mod release_nightly;
 mod run_agent_evals;
+mod run_bundling;
 mod run_tests;
 mod runners;
 mod steps;
@@ -140,6 +140,7 @@ pub fn run_workflows(_: GenerateWorkflowArgs) -> Result<()> {
         WorkflowFile::zed(extension_workflow_rollout::extension_workflow_rollout),
         WorkflowFile::zed(publish_extension_cli::publish_extension_cli),
         WorkflowFile::zed(release::release),
+        WorkflowFile::zed(release_custom::release_custom),
         WorkflowFile::zed(release_nightly::release_nightly),
         WorkflowFile::zed(run_agent_evals::run_agent_evals),
         WorkflowFile::zed(run_agent_evals::run_cron_unit_evals),
