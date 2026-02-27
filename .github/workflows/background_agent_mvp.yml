@@ -1,8 +1,6 @@
 name: background_agent_mvp
 
 on:
-  schedule:
-    - cron: "0 16 * * 1-5"
   workflow_dispatch:
     inputs:
       crash_ids:

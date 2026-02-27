@@ -8,8 +8,7 @@ on:
   push:
     tags:
     - nightly
-  schedule:
-  - cron: 0 7 * * *
+  workflow_dispatch:
 jobs:
   check_style:
     runs-on: macos-latest
